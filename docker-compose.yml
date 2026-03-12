@@ -1,5 +1,5 @@
 services:
-    exerciciojava:
+    exerciciojava_unisenaipr_20260312:
         build: .
         volumes:
             - .:/app

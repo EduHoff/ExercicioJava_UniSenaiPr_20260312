@@ -7,7 +7,7 @@ docker compose up --build
 
 ## Iniciar
 ```
-docker compose up
+docker compose run --rm exerciciojava_unisenaipr_20260312
 ```
 
 ## Encerrar

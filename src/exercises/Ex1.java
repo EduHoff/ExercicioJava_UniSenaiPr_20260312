@@ -7,8 +7,12 @@ a saída do programa.
 
 //OBS.: use o debugger caso queira fazer o teste de mesa
 
-public class Ex1 {
-    public static void run() {
+public class Ex1 implements Exercise {
+
+    @Override
+    public void run() {
+        System.out.println("--- Exercício 1 ---\n");
+
         int[] a = {4,7,2,9,5};
         int b = 0;
         int c = a[0];
