@@ -1,5 +1,7 @@
 package exercises;
 
+import java.util.Scanner;
+
 public interface Exercise {
-    public void run();
+    public void run(Scanner sc);
 }

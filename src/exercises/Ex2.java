@@ -1,6 +1,12 @@
 package exercises;
 
-import utils.ArrayUtils;
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import utils.StatisticsUtils;
+import utils.ConsoleUtils;
+import utils.NumberUtils;
 
 /* 
 Crie um programa que solicite ao usuário a entrada de 20 números inteiros,
@@ -18,17 +24,41 @@ exibir:
 public class Ex2 implements Exercise {
 
     @Override
-    public void run() {
+    public void run(Scanner sc) {
         System.out.println("--- Exercício 2 ---\n");
 
-        Integer[] lsita1 = {1,2,3,4,5,6,7,7,7,6,6};
-        Double[] lista2 = {1.2, 1.5, 0.0, -2.5, 10.0, 7.7};
-        //String[] lista3= {"a", "b", "c", "e", "d"};
+        Integer[] vetor = new Integer[20];
 
+        int last_int = 0;
+        while (last_int < 20) {
+            try{
 
-        System.out.println("Lista 1: " + ArrayUtils.mode(lsita1));
-        System.out.println("Lista 2: " + ArrayUtils.mode(lista2));
-        //System.out.println("Lista 3: " + ArrayUtils.min(lista3));
+                for(int i=last_int; i< 20; i++){
+                    System.out.println("Digite o "+(i+1)+"º número inteiro.");
+                    System.out.print("||");
+                    int num = sc.nextInt();
+                    vetor[i] = num;
+                    last_int = i + 1;
+                    ConsoleUtils.clear();
+                }
+            }catch(InputMismatchException e){
+                ConsoleUtils.clear();
+                System.out.println("Digite apenas números inteiros!\n");
+                sc.nextLine();
+            }catch(Exception e){
+                ConsoleUtils.clear();
+                e.printStackTrace();
+            }
+        }
 
+        ConsoleUtils.clear();
+        System.out.println("Array: " + Arrays.toString(vetor));
+        System.out.println("Maior valor: " + StatisticsUtils.max(vetor));
+        System.out.println("Menor valor: " + StatisticsUtils.min(vetor));
+        System.out.printf("Média: %.2f%n", StatisticsUtils.mean(vetor));
+        System.out.println("Moda: " + StatisticsUtils.mode(vetor));
+        System.out.println("Quantidade de pares: " + NumberUtils.countEven(vetor));
+        System.out.println("Quantidade de ímpares: " + NumberUtils.countOdd(vetor));
+        System.out.printf("Desvio padrão: %.2f%n", StatisticsUtils.standardDeviation(vetor));
     }
 }

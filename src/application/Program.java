@@ -49,7 +49,7 @@ public class Program {
                 Class<?> clazz = Class.forName("exercises.Ex" + num);
                 Exercise ex = (Exercise) clazz.getDeclaredConstructor().newInstance();
                 ConsoleUtils.clear();
-                ex.run();
+                ex.run(sc);
 
             
             }catch(InputMismatchException e){
