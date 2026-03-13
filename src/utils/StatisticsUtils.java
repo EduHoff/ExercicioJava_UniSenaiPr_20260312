@@ -31,6 +31,7 @@ public class StatisticsUtils {
                 max = t;
             }
         }
+        
         return max;
     }
 
@@ -50,6 +51,7 @@ public class StatisticsUtils {
                 min = t;
             }
         }
+
         return min;
     }
 
