@@ -7,7 +7,7 @@ import exceptions.Validation;
 
 public class NumberUtils {
 
-    // Quantidade números pares
+    // Contador números pares
     public static <T extends Number> long countEven(T[] array){
         Validation.IllegalArray(array);
         return countEven(Arrays.asList(array));
@@ -21,11 +21,10 @@ public class NumberUtils {
             .mapToDouble(x -> x.longValue())
             .filter(x -> x % 2 == 0)
             .count();
-
         return sum;
     }
 
-    // Quantidade números ímpares
+    // Contador números ímpares
     public static <T extends Number> long countOdd(T[] array){
         Validation.IllegalArray(array);
         return countOdd(Arrays.asList(array));
@@ -39,7 +38,57 @@ public class NumberUtils {
             .mapToDouble(x -> x.longValue())
             .filter(x -> x % 2 != 0)
             .count();
+        return sum;
+    }
 
+    // Contador números positivos
+    public static <T extends Number> long countPositive(T[] array){
+        Validation.IllegalArray(array);
+        return countPositive(Arrays.asList(array));
+    }
+
+    public static <T extends Number> long countPositive(Collection<T> collection){
+
+        Validation.IllegalCollection(collection);
+
+        long sum = collection.stream()
+            .mapToDouble(x -> x.longValue())
+            .filter(x -> x > 0)
+            .count();
+        return sum;
+    }
+
+    // Contador números negativos
+    public static <T extends Number> long countNegative(T[] array){
+        Validation.IllegalArray(array);
+        return countNegative(Arrays.asList(array));
+    }
+
+    public static <T extends Number> long countNegative(Collection<T> collection){
+
+        Validation.IllegalCollection(collection);
+
+        long sum = collection.stream()
+            .mapToDouble(x -> x.longValue())
+            .filter(x -> x < 0)
+            .count();
+        return sum;
+    }
+
+    // Contador de zeros
+    public static <T extends Number> long countZero(T[] array){
+        Validation.IllegalArray(array);
+        return countZero(Arrays.asList(array));
+    }
+
+    public static <T extends Number> long countZero(Collection<T> collection){
+
+        Validation.IllegalCollection(collection);
+
+        long sum = collection.stream()
+            .mapToDouble(x -> x.longValue())
+            .filter(x -> x == 0)
+            .count();
         return sum;
     }
 
