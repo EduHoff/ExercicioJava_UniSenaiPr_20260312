@@ -13,11 +13,11 @@ public class StatisticsUtils {
 
     // MÁXIMO
     public static <T extends Comparable<T>> T max(T[] array){
+        Validation.IllegalArray(array);
         return max(Arrays.asList(array));
     }
 
     public static <T extends Comparable<T>> T max(Collection<T> collection){      
-        
         Validation.IllegalCollection(collection);
 
         T max = collection.iterator().next();
@@ -32,11 +32,11 @@ public class StatisticsUtils {
 
     // MÍNIMO
     public static <T extends Comparable<T>> T min(T[] array){
+        Validation.IllegalArray(array);
         return min(Arrays.asList(array));
     }
 
     public static <T extends Comparable<T>> T min(Collection<T> collection){      
-        
         Validation.IllegalCollection(collection);
 
         T min = collection.iterator().next();
@@ -51,11 +51,11 @@ public class StatisticsUtils {
 
     // MÉRDIA ARITMETICA SIMPLES
     public static <T extends Number> double mean(T[] array){
+        Validation.IllegalArray(array);
         return mean(Arrays.asList(array));
     }
 
     public static <T extends Number> double mean(Collection<T> collection){
-
         Validation.IllegalCollection(collection);
 
         double sum = 0;
@@ -70,11 +70,11 @@ public class StatisticsUtils {
 
     // MODA
     public static <T> List<T> mode(T[] array){
+        Validation.IllegalArray(array);
         return mode(Arrays.asList(array));
     }
 
     public static <T> List<T> mode(Collection<T> collection){
-        
         Validation.IllegalCollection(collection);
 
         Map<T, Integer> aux_map = new HashMap<>();
@@ -98,11 +98,11 @@ public class StatisticsUtils {
 
     // VARIÂNCIA
     public static <T extends Number> double variance(T[] array){
+        Validation.IllegalArray(array);
         return standardDeviation(Arrays.asList(array));
     }
 
     public static <T extends Number> double variance(Collection<T> collection){
-
         Validation.IllegalCollection(collection);
         
         double mean = StatisticsUtils.mean(collection);
@@ -119,13 +119,12 @@ public class StatisticsUtils {
     
     // DESVIO PADRÃO
     public static <T extends Number> double standardDeviation(T[] array){
+        Validation.IllegalArray(array);
         return standardDeviation(Arrays.asList(array));
     }
 
     public static <T extends Number> double standardDeviation(Collection<T> collection){
-
         Validation.IllegalCollection(collection);
-
         return Math.sqrt(StatisticsUtils.variance(collection));
     }
 }

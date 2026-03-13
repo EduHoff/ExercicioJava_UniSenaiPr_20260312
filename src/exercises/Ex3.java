@@ -26,7 +26,7 @@ public class Ex3 implements Exercise {
         while (last_int < ARRAY_SIZE) {
             try{
 
-                for(int i=last_int; i< ARRAY_SIZE; i++){
+                for(int i=last_int; i<ARRAY_SIZE; i++){
                     System.out.println("Digite o "+(i+1)+"º número inteiro.");
                     System.out.print("||");
                     int num = sc.nextInt();
@@ -51,6 +51,5 @@ public class Ex3 implements Exercise {
         ConsoleUtils.clear();
         System.out.println("Array: " + Arrays.toString(array));
         System.out.println("Primos: " + Arrays.toString(list_primes));
-
     }
 }

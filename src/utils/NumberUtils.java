@@ -9,6 +9,7 @@ public class NumberUtils {
 
     // Quantidade números pares
     public static <T extends Number> long countEven(T[] array){
+        Validation.IllegalArray(array);
         return countEven(Arrays.asList(array));
     }
 
@@ -26,6 +27,7 @@ public class NumberUtils {
 
     // Quantidade números ímpares
     public static <T extends Number> long countOdd(T[] array){
+        Validation.IllegalArray(array);
         return countOdd(Arrays.asList(array));
     }
 

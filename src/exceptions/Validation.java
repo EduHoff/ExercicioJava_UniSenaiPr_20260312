@@ -10,4 +10,10 @@ public class Validation {
         }
     }
 
+    public static <T> void IllegalArray(T[] array){
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("Array cannot be null or empty");  
+        }
+    }
+
 }

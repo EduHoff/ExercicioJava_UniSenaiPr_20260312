@@ -35,7 +35,7 @@ public class Ex2 implements Exercise {
         while (last_int < ARRAY_SIZE) {
             try{
 
-                for(int i=last_int; i< ARRAY_SIZE; i++){
+                for(int i=last_int; i<ARRAY_SIZE; i++){
                     System.out.println("Digite o "+(i+1)+"º número inteiro.");
                     System.out.print("||");
                     int num = sc.nextInt();
