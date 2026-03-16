@@ -2,6 +2,7 @@ package utils;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import exceptions.Validation;
 
@@ -103,6 +104,36 @@ public class NumberUtils {
             if (num % i == 0) return false;
         }
 
+        return true;
+    }
+
+    // Verifica se é uma ordem crescente ou não
+    public static <T extends Number> boolean isAscending(T[] array){
+        return isAscending(Arrays.asList(array));
+    }
+
+    public static <T extends Number> boolean isAscending(List<T> list){
+
+    for(int i = 0; i < list.size() - 1; i++){
+        if(list.get(i).doubleValue() > list.get(i + 1).doubleValue()){
+            return false;
+        }
+    }
+        return true;
+    }
+
+    // Verifica se é uma ordem decrescente ou não 
+    public static <T extends Number> boolean isDescending(T[] array){
+        return isDescending(Arrays.asList(array));
+    }
+
+    public static <T extends Number> boolean isDescending(List<T> list){
+
+    for(int i = 0; i < list.size() - 1; i++){
+        if(list.get(i).doubleValue() < list.get(i + 1).doubleValue()){
+            return false;
+        }
+    }
         return true;
     }
 

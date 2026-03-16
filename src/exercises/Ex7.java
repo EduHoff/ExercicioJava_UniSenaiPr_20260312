@@ -8,11 +8,10 @@ import java.util.Scanner;
 
 import utils.CollectionUtils;
 import utils.ConsoleUtils;
-import utils.NumberUtils;
 
 /* 
-Leia um vetor de 10 inteiros e exiba a quantidade de valores positivos,
-negativos e zeros.
+Leia um vetor de 10 inteiros e um número X. Informe se X está no vetor e em
+quais posições aparece.
 */
 
 
@@ -22,7 +21,7 @@ public class Ex7 implements Exercise {
 
     @Override
     public void run(Scanner sc) {
-        System.out.println("--- Exercício 6 ---\n");
+        System.out.println("--- Exercício 7 ---\n");
 
         Integer[] array = new Integer[ARRAY_SIZE];
         int num_x = 0;
