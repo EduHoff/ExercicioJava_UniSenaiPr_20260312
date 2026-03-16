@@ -109,10 +109,12 @@ public class NumberUtils {
 
     // Verifica se é uma ordem crescente ou não
     public static <T extends Number> boolean isAscending(T[] array){
+        Validation.IllegalArray(array);
         return isAscending(Arrays.asList(array));
     }
 
     public static <T extends Number> boolean isAscending(List<T> list){
+        Validation.IllegalList(list);
 
     for(int i = 0; i < list.size() - 1; i++){
         if(list.get(i).doubleValue() > list.get(i + 1).doubleValue()){
@@ -124,10 +126,12 @@ public class NumberUtils {
 
     // Verifica se é uma ordem decrescente ou não 
     public static <T extends Number> boolean isDescending(T[] array){
+        Validation.IllegalArray(array);
         return isDescending(Arrays.asList(array));
     }
 
     public static <T extends Number> boolean isDescending(List<T> list){
+        Validation.IllegalList(list);
 
     for(int i = 0; i < list.size() - 1; i++){
         if(list.get(i).doubleValue() < list.get(i + 1).doubleValue()){
@@ -137,4 +141,19 @@ public class NumberUtils {
         return true;
     }
 
+    // Multiplicar Escalar
+    public static <T extends Number> List<Double> multiplyByScalar(T[] array, int k){
+        Validation.IllegalArray(array);
+        return multiplyByScalar(Arrays.asList(array), k);
+    }
+
+    public static <T extends Number> List<Double> multiplyByScalar(Collection<T> collection, int k){
+        Validation.IllegalCollection(collection);
+
+        List<Double> result = collection.stream()
+            .map(t -> t.doubleValue() * k)
+            .toList();
+
+        return result;
+    }
 }
