@@ -76,6 +76,6 @@ public class Ex5 implements Exercise {
 
         ConsoleUtils.clear();
         System.out.println("Array Original: " + Arrays.toString(array));
-        System.out.println("Array Invertido: " + Arrays.toString(CollectionUtils.invertArray(array)));
+        System.out.println("Array Invertido: " + Arrays.toString(CollectionUtils.invertList(array)));
     }
 }
