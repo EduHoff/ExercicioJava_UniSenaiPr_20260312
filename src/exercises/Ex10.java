@@ -6,21 +6,19 @@ import java.util.Scanner;
 
 import utils.CollectionUtils;
 import utils.ConsoleUtils;
+import utils.NumberUtils;
 
 /* 
-Leia um vetor de N inteiros (N deve ser fornecido pelo usuário) e troque o
-primeiro elemento com o último, o segundo com o penúltimo, e assim por
-diante (inversão “na mão”, sem vetor auxiliar do mesmo tamanho). Exiba o
-vetor final.
+Leia um vetor de N inteiros e verifique se ele é um palíndromo (lê igual da
+esquerda para a direita e vice-versa). Exiba “SIM” ou “NÃO”.
 */
 
-
-public class Ex5 implements Exercise {
+public class Ex10 implements Exercise {
     
 
     @Override
     public void run(Scanner sc) {
-        System.out.println("--- Exercício 5 ---\n");
+        System.out.println("--- Exercício 10 ---\n");
 
         Integer[] array = null;
         int array_size = 0;
@@ -76,7 +74,13 @@ public class Ex5 implements Exercise {
         }
 
         ConsoleUtils.clear();
-        System.out.println("Array Original: " + Arrays.toString(array));
+        System.out.println("Array: " + Arrays.toString(array));
         System.out.println("Array Invertido: " + Arrays.toString(CollectionUtils.invertList(array)));
+        System.out.print("Palíndromo: ");
+        if(NumberUtils.isPalindrome(array)){
+            System.out.println("SIM");
+        }else{
+            System.out.println("NÃO");
+        } 
     }
 }

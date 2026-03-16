@@ -156,4 +156,24 @@ public class NumberUtils {
 
         return result;
     }
+
+    // Verificar se é um palíndromo
+    public static <T> boolean isPalindrome(T[] array){
+        Validation.IllegalArray(array);
+        return isPalindrome(Arrays.asList(array));
+    }
+
+    public static <T> boolean isPalindrome(List<T> list){
+        Validation.IllegalList(list);
+
+        int middle_index = list.size() / 2;
+
+        for(int i = 0; i < middle_index; i++){
+            if(!(list.get(i).equals(list.get(list.size() - (1 + i))))){
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
