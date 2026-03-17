@@ -86,17 +86,11 @@ public class Ex13 implements Exercise {
         }
 
         int correct = 0;
-        int coincidence = 0;
         for(int i=0; i<ARRAY_SIZE; i++){
-            if(array[i].equals(lucky_numbers[i])){ //verfica se o usuário acertou o número na posição certa
-                correct++;
-                coincidence++;
-            }else{
-                for(int j=0; j<ARRAY_SIZE; j++){
-                    if(array[i].equals(lucky_numbers[j])){ //verfica se o número do usuário aparece em alguma outra posição
-                        coincidence++;
-                        break;
-                    }
+            for(int j=0; j<ARRAY_SIZE; j++){
+                if(array[i].equals(lucky_numbers[j])){
+                    correct++;
+                    break;
                 }
             }
         }
@@ -106,7 +100,6 @@ public class Ex13 implements Exercise {
         System.out.println("Números sorteados: " + Arrays.toString(lucky_numbers));
         System.out.println("Números escolhidos: " + Arrays.toString(array));
         System.out.println("Total de acertos: " + correct);
-        System.out.println("Total de coincidências: " + coincidence);
 
         if(correct == 6){
             System.out.println("\nOk. Eu estou com medo da sua sorte...");
