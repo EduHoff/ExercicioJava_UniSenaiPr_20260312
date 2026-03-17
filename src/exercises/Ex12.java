@@ -61,7 +61,7 @@ public class Ex12 implements Exercise {
                 sc.nextLine();
             }catch(IndexOutOfBoundsException e){
                 ConsoleUtils.clear();
-                System.out.println("Digite apenas números no intervalo de 0 até " + (ARRAY_SIZE - 1) + ".\n");
+                System.out.println("Digite apenas números no intervalo de 0 até " + (ARRAY_SIZE - 1) + "!\n");
                 index_p=0;
                 sc.nextLine();
             }catch(Exception e){
