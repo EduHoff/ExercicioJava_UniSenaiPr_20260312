@@ -74,4 +74,27 @@ public class CollectionUtils {
            return Map.entry(true, aux);
         }
     }
+
+     // Remove um elemento de um index na lista
+    public static <T> List<T> removeItemList(T[] array, int index_p){
+        Validation.IllegalArray(array);
+        return removeItemList(Arrays.asList(array), index_p);
+    }
+
+    public static <T> List<T> removeItemList(List<T> list, int index_p){
+
+        Validation.IllegalList(list);
+
+        List<T> result = new ArrayList<>();
+
+        for(int i = 0; i < index_p; i++){
+            result.add(list.get(i));
+        }
+
+        for(int i = index_p; i < list.size()-1; i++){
+            result.add(list.get(i+1));
+        }
+
+        return result;
+    }
 }
